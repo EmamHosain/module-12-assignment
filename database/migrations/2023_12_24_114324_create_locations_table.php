@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('trip_id')->constrained('trips')->onDelete('cascade');
-            $table->timestamp('Dpt_time')->default(now());
-            $table->timestamp('Arr_time')->default(now());
+            $table->dateTime('Dpt_time')->default(now());
+            $table->dateTime('Arr_time')->default(now());
             $table->string('starting_point');
             $table->string('ending_point');
             $table->timestamp('created_at')->useCurrent();
